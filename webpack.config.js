@@ -1,10 +1,9 @@
 /**
  * Created by Ankush on 3/25/17.
  */
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+let path = require('path');
+let webpack = require('webpack');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -12,7 +11,7 @@ module.exports = {
         path.join(__dirname, 'client/app.js')
     ],
     output: {
-        path: path.resolve(__dirname),
+        path: path.resolve(__dirname, 'public'),
         filename: 'main.js',
         publicPath: '/'
     },

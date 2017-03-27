@@ -4,12 +4,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Route, Router, useRouterHistory } from 'react-router';
-import { createHistory }  from 'history';
-
 import Home from './component/Home';
 
+import { Router, Route, IndexRoute } from 'react-router'
+import createBrowserHistory from 'history/createBrowserHistory'
 
-const appHistory = useRouterHistory(createHistory)({queryKey: false});
 
-ReactDOM.render(<Router history={appHistory}> <Route name='home' path='/' component={Home}> </Route></Router>);
+const history = createBrowserHistory();
+
+
+ReactDOM.render(
+    <Router history={history}>
+
+        <Route component={Home} path='/'></Route>
+    </Router>
+    ,  document.getElementById('root'));
