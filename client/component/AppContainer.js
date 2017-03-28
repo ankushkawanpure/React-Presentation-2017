@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-export default class Audience extends React.Component{
+export default class AppContainer extends React.Component{
 
     constructor(props) {
         super(props);

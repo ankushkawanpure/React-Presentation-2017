@@ -4,18 +4,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Home from './component/Home';
+import AppContainer from './component/AppContainer';
 
 import { Router, Route, IndexRoute } from 'react-router'
 import createBrowserHistory from 'history/createBrowserHistory'
-
 
 const history = createBrowserHistory();
 
 
 ReactDOM.render(
     <Router history={history}>
-
-        <Route component={Home} path='/'></Route>
+        <Route component={AppContainer} path='/'></Route>
     </Router>
     ,  document.getElementById('root'));
