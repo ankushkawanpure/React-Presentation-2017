@@ -1,23 +1,21 @@
 /**
  * Created by Ankush on 3/27/17.
  */
-var connections = [];
-var title = 'Presentation yet to start';
-var audience =[];
-var speaker = {};//only one speaker so object in place pf array
-var questions = require('./app-questions');
-var slides = require('./app-slides');
-var currentQuestion = false;
-var currentSlide = false;
-var results = {
+let connections = [];
+let title = 'Presentation yet to start';
+let audience =[];
+let speaker = {};//only one speaker so object in place pf array
+let questions = require('./data/Questions');
+let slides = require('./data/Slides');
+let currentQuestion = false;
+let currentSlide = false;
+let results = {
     a: 0,
     b: 0,
     c: 0,
     d: 0
 };
 
-
-var server = app.listen(3000);
 
 //import
 var io = require('socket.io').listen(server);
@@ -32,7 +30,7 @@ io.sockets.on('connection', function (socket) {
 
         if(member) {
             audience.splice(audience.indexOf(member),1);
-            io.sockets.emit('audience', audience)
+            io.sockets.emit('audience', audience);
             console.log(member.name + " Member left " + audience.length + " Members remain");
         } else if (this.id === speaker.id) { // Handling leaving a speaker
             console.log(speaker.name + "Speaker left");
