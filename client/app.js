@@ -16,4 +16,5 @@ ReactDOM.render(
     <Router history={history}>
         <Route component={AppContainer} path='/'></Route>
     </Router>
-    ,  document.getElementById('root'));
+    ,  document.getElementById('root')
+);

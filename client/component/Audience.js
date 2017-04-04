@@ -12,7 +12,6 @@ export default class Audience extends React.Component{
     render () {
         return(
             <div>
-
                 <Display if={this.props.status === 'connected'}>
 
 
